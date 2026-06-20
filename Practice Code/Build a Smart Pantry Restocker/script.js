@@ -51,27 +51,62 @@ function parseShipment(rawData) {
 
 function planRestock(pantry, shipment) {
   let actions = [];
-  let action = {};
 
   for (const item of shipment) {
+    let type;
+
     if (item.qty <= 0) {
-      action.type = "discard";
-    } else if (item.qty > 0) {
-        if(item.sku === pantry.sku){
-            action.type = "restock";
-        }
+      type = "discard";
     } else {
-      action.type = "donate";
+      let found = false;
+
+      for (const pantryItem of pantry) {
+        if (pantryItem.sku === item.sku) {
+          found = true;
+          break;
+        }
+      }
+      type = found ? "restock" : "donate";
     }
-    action = {
-      type: "",
-      item: item,
-    };
-    actions.push(action);
+
+    action.push({
+      type,
+      item,
+    });
   }
 
   return actions;
 }
 
-// console.log(parseShipment(rawData));
-console.log(planRestock(pantry, parseShipment(rawData)));
+function groupByZone(actions){
+    const grouped = {};
+
+    for(const action of actions){
+        const zone = action.item.zone;
+
+        if(!grouped[zone]){
+            grouped[zone] = [];
+        }
+
+        grouped[zone].push(action);
+    }
+
+    return grouped;
+}
+
+function clonePantry(pantry){
+    const copy = [];
+
+    for(const item of pantry){
+        copy.push({...item});
+    }
+
+    return copy;
+}
+
+const pantryCopy = clonePantry(pantry);
+const shipment = parseShipment(rawData);
+const actions = planRestock(clonePantry, shipment);
+const groupedActions = groupByZone(actions);
+
+console.log(groupedActions);
