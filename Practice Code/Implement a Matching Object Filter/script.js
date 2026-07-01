@@ -7,8 +7,8 @@ function whatIsInAName(arr, src) {
         const key = Object.keys(src)[j];
         if (arr[i][key] !== src[key]) {
           matches = false;
+          continue;
         }
-        continue;
     }
     if(matches){
         result.push(arr[i]);
