@@ -1,0 +1,29 @@
+body {
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    color: navy;
+}
+
+.item {
+    list-style-type: none;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: pink;
+}
+
+.filled {
+    color: pink;
+    font-size: 24px;
+}
