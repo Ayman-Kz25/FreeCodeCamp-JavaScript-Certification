@@ -1,0 +1,14 @@
+body {
+    text-align: center;
+}
+
+#text-input {
+    border: 2px solid gray;
+    border-radius: 6px;
+    resize: none;
+    font-size: 18px;
+}
+
+#text-input:focus{
+    border: 2px solid goldenrod;
+}
