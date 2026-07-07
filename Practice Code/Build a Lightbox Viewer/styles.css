@@ -1,0 +1,89 @@
+body {
+    position: relative;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    scrollbar-width: none;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 45px;
+    margin: 60px auto;
+}
+
+.gallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.gallery-box {
+    width: 350px;
+    height: 300px;
+    border-radius: 12px;
+    border: 3px solid goldenrod;
+    overflow: hidden;
+}
+
+.gallery-item {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0,0,0,0.75);
+}   
+
+.lightbox-content {
+    position: relative;
+    padding: 60px 20px 20px;
+    background: white;
+
+    border-radius: 12px;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+#close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    border: none;
+    outline: none;
+    background: none;
+
+    font-size: 42px;
+    color: goldenrod;
+    cursor: pointer;
+}
+
+#lightbox-image {
+    display: block;
+    max-width: 80vw;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    border-radius: 12px;
+}
