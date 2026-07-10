@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  padding: 3px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+
+#status {
+  text-align: center;
+  min-height: 20px;
+  font-size: 28px;
+}
+
+.theme-light {
+    background: white;
+    color: black;
+}
+
+.theme-dark {
+    background: #111;
+    color: white;
+}
+
+.theme-dim {
+    background: #444;
+    color: white;
+}
+
+.theme-sepia {
+    background: #f4ecd8;
+    color: #5b4636;
+}
