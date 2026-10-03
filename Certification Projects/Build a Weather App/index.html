@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather App</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main class="weather-app">
+
+        <section class="weather-card">
+
+            <header class="app-header">
+                <p class="app-label">WEATHER</p>
+                <h1>Weather App</h1>
+                <p class="subtitle">Check the current weather in a city</p>
+            </header>
+
+            <div class="search-area">
+                <label for="city-select">Choose a city</label>
+
+                <div class="search-controls">
+                    <select id="city-select">
+                        <option value=""></option>
+                        <option value="new york">New York</option>
+                        <option value="los angeles">Los Angeles</option>
+                        <option value="chicago">Chicago</option>
+                        <option value="paris">Paris</option>
+                        <option value="tokyo">Tokyo</option>
+                        <option value="london">London</option>
+                    </select>
+
+                    <button id="get-weather-btn" type="button">
+                        Get Weather
+                    </button>
+                </div>
+            </div>
+
+            <section class="weather-result">
+
+                <div class="location-area">
+                    <p class="location-label">CURRENT LOCATION</p>
+                    <h2 id="location"></h2>
+                </div>
+
+                <div class="main-weather">
+                    <img id="weather-icon" alt="Weather icon">
+
+                    <div class="temperature-area">
+                        <div id="main-temperature"></div>
+                        <p>Current Temperature</p>
+                    </div>
+
+                    <div class="condition-area">
+                        <div id="weather-main"></div>
+                    </div>
+                </div>
+
+                <div class="weather-details">
+
+                    <div class="weather-detail">
+                        <span class="detail-label">Feels Like</span>
+                        <strong id="feels-like"></strong>
+                    </div>
+
+                    <div class="weather-detail">
+                        <span class="detail-label">Humidity</span>
+                        <strong id="humidity"></strong>
+                    </div>
+
+                    <div class="weather-detail">
+                        <span class="detail-label">Wind</span>
+                        <strong id="wind"></strong>
+                    </div>
+
+                    <div class="weather-detail">
+                        <span class="detail-label">Wind Gust</span>
+                        <strong id="wind-gust"></strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html>
